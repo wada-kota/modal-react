@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [show, setShow] = useState(false);
+
+  const onClickShow = () => {
+    setShow(true);
+  }
+
+  const onClickHide = () => {
+    setShow(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={onClickShow}>click!</button>
+      
+        {show && (
+        <div className='overlay'>
+          <div className='modalWrap'>
+            <p>モーダルウィンドウです。</p>
+            <button onClick={onClickHide}>close</button>
+          </div>
+        </div>
+        )}
+    </>
   );
 }
 
