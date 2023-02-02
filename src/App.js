@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-function App() {
+export function App() {
 
   const [show, setShow] = useState(false);
 
@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       <button onClick={onClickShow}>click!</button>
-      
         {show && (
         <div className='overlay'>
           <div className='modalWrap'>
@@ -28,5 +27,3 @@ function App() {
     </>
   );
 }
-
-export default App;
